@@ -93,23 +93,23 @@ All interactions are handled through RESTful APIs.
 
 ## ▶️ How to Run the Project
 
-# Clone the repository
+## Clone the repository
 git clone https://github.com/your-username/ticket-management-api.git
 
-# Navigate to project directory
+## Navigate to project directory
 cd ticket-management-api
 
-# Create virtual environment
+## Create virtual environment
 python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+source venv/bin/activate   
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
-# Run the application
+## Run the application
 python main.py
 
-This Swagger UI allows you to test all APIs such as:
+### This Swagger UI allows you to test all APIs such as:
 
 1. Authentication
 2. Movie & Theatre management
