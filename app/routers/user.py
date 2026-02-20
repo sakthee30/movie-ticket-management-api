@@ -6,6 +6,10 @@ from app.models.user import User
 from app.schemas.user import UserCreate, UserResponse
 from app.utils.security import hash_password
 
+from app.services.recommendation_service import generate_movie_recommendations
+from app.models.booking import Booking
+from app.models.movie import Movie
+
 router = APIRouter(
     prefix="/users",
     tags=["Users"]
@@ -83,4 +87,30 @@ def get_profile(current_user: User = Depends(get_current_user)):
         "message": "You are authenticated",
         "user_id": current_user.id,
         "email": current_user.email
+    }
+
+@router.get("/users/{user_id}/recommendations")
+def get_recommendations(user_id: int, db: Session = Depends(get_db)):
+
+    bookings = db.query(Booking).filter(Booking.user_id == user_id).all()
+
+    if not bookings:
+        return {"message": "No bookings found for this user."}
+
+    watched_movies = []
+
+    for booking in bookings:
+        movie = db.query(Movie).filter(Movie.id == booking.show.movie_id).first()
+        if movie:
+            watched_movies.append({
+                "title": movie.title,
+                "genre": movie.genre
+            })
+
+    recommendations = generate_movie_recommendations(watched_movies)
+
+    return {
+        "user_id": user_id,
+        "watched_movies": watched_movies,
+        "recommendations": recommendations
     }

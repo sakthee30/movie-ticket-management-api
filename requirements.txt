@@ -4,3 +4,4 @@ sqlalchemy
 pydantic
 passlib[argon2]
 jose[argon2]
+openai

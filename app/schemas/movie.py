@@ -7,6 +7,7 @@ class MovieCreate(BaseModel):
     description: Optional[str] = None
     duration: int
     language: str
+    genre: str
     release_date: Optional[date] = None
     rating: Optional[float] = None
 
@@ -16,6 +17,7 @@ class MovieResponse(BaseModel):
     description: Optional[str]
     duration: int
     language: str
+    genre: str
     release_date: Optional[date]
     rating: Optional[float]
 

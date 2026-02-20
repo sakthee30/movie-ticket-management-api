@@ -1,3 +1,10 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+print("Loaded API KEY:", os.getenv("OPENAI_API_KEY"))
+
+
 from fastapi import FastAPI
 from app.database import engine
 from app.models.user import User
@@ -8,6 +15,7 @@ from app.routers.theatre import Theatre
 from app.routers.showtime import ShowTime
 from app.routers.booking import Booking
 from app.models.payment import Payment
+from app.routers import recommendation
 
 User.metadata.create_all(bind=engine)
 Movie.metadata.create_all(bind=engine)
@@ -47,4 +55,5 @@ app.include_router(booking.router)
 app.include_router(user.router)
 app.include_router(admin.router)
 app.include_router(payment.router)
+app.include_router(recommendation.router)
 

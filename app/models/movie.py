@@ -11,6 +11,7 @@ class Movie(Base):
     duration = Column(Integer, nullable=False)
     language = Column(String, nullable=False)
     release_date = Column(Date, nullable=True)
+    genre = Column(String, nullable=False)
     rating = Column(Float, nullable=True)
 
     showtimes = relationship("ShowTime", back_populates = "movie")
