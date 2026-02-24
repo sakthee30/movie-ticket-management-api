@@ -1,4 +1,4 @@
-# 🎟️ Movie Ticket Management API
+# Movie Ticket Management API
 
 This project is a backend API application built using FastAPI to manage movie ticket booking workflows.  
 It provides APIs for user authentication, movie and theatre management, showtime scheduling, seat booking, and payment handling and AI-powered movie recommendations.
@@ -7,7 +7,7 @@ The system is designed with a clear structure, database-driven logic, and real-w
 
 ---
 
-## 📦 Project Overview
+## Project Overview
 
 The Movie Ticket Management API allows users to:
 
@@ -23,47 +23,47 @@ All interactions are handled through RESTful APIs.
 
 ---
 
-## ✨ Features Covered
+## Features 
 
-### 👤 User Management
+### User Management
 - User registration and login
 - JWT-based authentication
 - Role-based access (User / Admin)
 
-### 🎬 Movie & Theatre Management
+### Movie & Theatre Management
 - Create and fetch movie details
 - Manage theatre information
 - Link movies with theatres through showtimes
 
-### ⏰ Showtime Management
+### Showtime Management
 - Schedule showtimes for movies
 - Fetch available showtimes for booking
 
-### 🎟️ Booking System
+### Booking System
 - Book tickets for a specific showtime
 - Store seat count and total price
 - Booking status tracking (PENDING / CONFIRMED)
 
-### 💳 Payment Module
+### Payment Module
 - Payment creation linked to bookings
 - Payment status handling (PENDING / SUCCESS)
 - Database-driven payment and booking updates
 - Designed to support real payment gateway integration
 
-### 🤖 AI-Powered Recommendation System (New)
+### AI-Powered Recommendation System (New)
 - Genre-based movie recommendations
 - Intelligent suggestions based on user input
 - Helps users discover movies matching their interests
 - REST API integration for recommendation queries
 
-### 🛡️ Admin APIs
+### Admin APIs
 - View all bookings
 - Access booking details across users
 - Restricted access using admin authorization
 
 ---
 
-## 📐 Architecture & Design
+## Architecture & Design
 
 - Clean separation of concerns:
   - Routers for API endpoints
@@ -77,7 +77,7 @@ All interactions are handled through RESTful APIs.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** FastAPI (Python)
 - **Database:** SQLite (via SQLAlchemy ORM)
@@ -89,7 +89,7 @@ All interactions are handled through RESTful APIs.
 
 ---
 
-## 🔄 API Flow (High Level)
+## API Flow (High Level)
 
 1. User registers and logs in
 2. User browses movies and showtimes
